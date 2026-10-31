@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commercial Rent Data — CommercialRentData.com</title>
+<meta name="description" content="Public figures on office rents by major U.S. market, vacancy rates, and rent trends.">
+<link rel="canonical" href="https://commercialrentdata.com/market-data">
+<meta property="og:title" content="Commercial Rent Data — CommercialRentData.com">
+<meta property="og:description" content="Public figures on office rents by major U.S. market, vacancy rates, and rent trends.">
+<meta property="og:url" content="https://commercialrentdata.com/market-data">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --ink:#0c0e12; --ink2:#12151b; --ink3:#1a1e27;
+  --paper:#f5f1e8; --paper2:#ece5d4;
+  --brass:#c9a15a; --brass2:#e3c383; --copper:#a9713c;
+  --mut:#9aa0ab; --line:rgba(201,161,90,.18);
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--brass);color:var(--ink)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.kicker{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--brass);font-weight:500}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(12,14,18,.78);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1280px;margin:0 auto;padding:0 32px}
+.brand{font-family:var(--serif);font-size:19px;letter-spacing:.02em;text-decoration:none}
+.brand em{font-style:normal;color:var(--brass)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a.nl{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--mut);transition:color .25s}
+.nav-links a.nl:hover{color:var(--brass2)}
+.price-chip{font-family:var(--serif);font-size:15px;color:var(--brass2);border:1px solid var(--line);padding:7px 14px;border-radius:2px;letter-spacing:.03em}
+.btn{display:inline-block;background:var(--brass);color:#14110a;font-weight:600;font-size:14px;letter-spacing:.06em;text-decoration:none;padding:15px 34px;border-radius:2px;transition:background .25s,transform .25s}
+.btn:hover{background:var(--brass2);transform:translateY(-1px)}
+.btn.sm{padding:10px 22px;font-size:12.5px}
+.btn.ghost{background:transparent;color:var(--brass2);border:1px solid var(--brass)}
+.btn.ghost:hover{background:rgba(201,161,90,.1)}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,14,18,.55) 0%,rgba(12,14,18,.35) 45%,rgba(12,14,18,.94) 100%)}
+.hero-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:140px 32px 90px;width:100%}
+.hero h1{font-size:clamp(48px,7.5vw,104px);letter-spacing:-.01em;margin:26px 0 24px}
+.hero h1 span{color:var(--brass2);font-style:italic;font-weight:400}
+.hero-sub{font-size:clamp(17px,2vw,21px);color:#cfd4dc;max-width:640px;font-weight:300}
+.hero-cta{display:flex;gap:18px;margin-top:38px;flex-wrap:wrap;align-items:center}
+.contact-line{margin-top:26px;font-size:13.5px;color:var(--mut);letter-spacing:.04em}
+.contact-line a{color:var(--brass2);text-decoration:none;border-bottom:1px solid var(--line)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:72px}
+.stat{background:rgba(12,14,18,.72);padding:28px 26px}
+.stat .num{font-family:var(--serif);font-size:34px;color:var(--brass2);letter-spacing:.01em}
+.stat .lbl{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-top:8px}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.3em;color:var(--mut);text-transform:uppercase}
+/* SECTIONS */
+section{padding:120px 0}
+.sec-head{display:flex;align-items:baseline;gap:26px;margin-bottom:54px}
+.sec-head .idx{font-family:var(--serif);color:var(--brass);font-size:15px;letter-spacing:.1em}
+.sec-head h2{font-size:clamp(34px,4.4vw,54px);letter-spacing:-.01em}
+.lede{font-size:19px;color:#c7ccd4;max-width:720px}
+/* ASSET */
+.asset-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;margin-top:64px}
+.asset-grid img{width:100%;height:560px;object-fit:cover;border-radius:2px;filter:saturate(.85) contrast(1.03)}
+.asset-grid .copy p{margin-bottom:20px;color:#c7ccd4;font-size:17px}
+.asset-grid .copy p strong{color:var(--paper);font-weight:500}
+.pull{font-family:var(--serif);font-size:26px;line-height:1.4;color:var(--brass2);border-left:2px solid var(--brass);padding-left:24px;margin:34px 0;font-style:italic}
+/* MARKET BAND */
+.band{background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.data-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:44px;margin-top:60px}
+.data-cell .dv{font-family:var(--serif);font-size:46px;color:var(--brass2)}
+.data-cell .dc{font-size:15.5px;color:#c7ccd4;margin-top:10px}
+.data-cell .ds{font-size:12px;color:var(--mut);margin-top:8px;letter-spacing:.04em}
+/* USE CASES */
+.use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:60px}
+.use{background:var(--ink);padding:42px 36px;transition:background .3s}
+.use:hover{background:var(--ink2)}
+.use .tag{font-size:11px;letter-spacing:.28em;color:var(--brass);text-transform:uppercase}
+.use h3{font-size:23px;margin:14px 0 12px}
+.use p{font-size:15px;color:var(--mut)}
+/* MOAT */
+.moat{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}
+.moat img{width:100%;height:520px;object-fit:cover;border-radius:2px;filter:saturate(.8) brightness(.92)}
+.moat-list{margin-top:30px}
+.moat-item{display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.moat-item .n{font-family:var(--serif);color:var(--brass);font-size:18px;min-width:34px}
+.moat-item p{font-size:15.5px;color:#c7ccd4}
+/* INSIGHTS */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px}
+.card{border:1px solid var(--line);border-radius:2px;overflow:hidden;text-decoration:none;background:var(--ink2);transition:transform .3s,border-color .3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);border-color:rgba(201,161,90,.45)}
+.card img{width:100%;height:210px;object-fit:cover;filter:saturate(.8)}
+.card .cb{padding:30px 28px 32px;display:flex;flex-direction:column;flex:1}
+.card .cb .tag{font-size:10.5px;letter-spacing:.28em;color:var(--brass);text-transform:uppercase}
+.card h3{font-size:22px;margin:12px 0 12px;line-height:1.25}
+.card p{font-size:14.5px;color:var(--mut);flex:1}
+.card .read{margin-top:20px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass2)}
+/* FAQ */
+.faq-item{border-top:1px solid var(--line);padding:28px 0}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-item h3{font-size:20px;margin-bottom:10px;color:var(--paper)}
+.faq-item p{color:#c7ccd4;font-size:15.5px;max-width:800px}
+/* BUY */
+.buy{background:linear-gradient(rgba(12,14,18,.88),rgba(12,14,18,.93)),url('images/glass-tower-blue.jpg') center/cover;text-align:center}
+.buy h2{font-size:clamp(36px,5vw,62px);margin:22px 0 18px}
+.buy .price{font-family:var(--serif);font-size:clamp(52px,7vw,88px);color:var(--brass2);margin:10px 0 30px;letter-spacing:.01em}
+.buy p.sub{color:#c7ccd4;max-width:620px;margin:0 auto 36px;font-size:17px}
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:60px 0 44px;background:var(--ink)}
+.foot-in{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.foot-brand{font-family:var(--serif);font-size:22px}
+.foot-brand em{font-style:normal;color:var(--brass)}
+.foot-col{font-size:13.5px;color:var(--mut);line-height:2}
+.foot-col a{color:var(--brass2);text-decoration:none}
+.foot-note{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:#6d737e;letter-spacing:.03em}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.on{opacity:1;transform:none}
+@media(max-width:960px){.asset-grid,.moat{grid-template-columns:1fr;gap:44px}.use-grid,.cards,.data-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr 1fr}.nav-links a.nl{display:none}.asset-grid img,.moat img{height:360px}}
+</style>
+<style>
+/* --- Market-data page additions (staged page only) --- */
+main.wrap{max-width:920px;margin:0 auto;padding:118px 20px 64px}
+main.wrap h1,main.wrap h2,main.wrap h3{overflow-wrap:break-word;word-break:break-word}
+main.wrap h1{font-size:clamp(30px,6vw,52px);line-height:1.12;margin:12px 0 10px}
+main.wrap h2{font-size:clamp(22px,4vw,30px);line-height:1.25;margin:44px 0 12px}
+main.wrap h3{font-size:19px;margin:26px 0 8px}
+main.wrap p,main.wrap li{font-size:17px;line-height:1.7;margin:0 0 14px}
+main.wrap ul{padding-left:22px}
+.stamp{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;border:1px solid rgba(255,255,255,.25);padding:8px 14px}
+.lede{font-size:19px;line-height:1.7;opacity:.92}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:22px 0}
+.stat{border:1px solid rgba(255,255,255,.22);padding:18px 20px}
+.stat b{display:block;font-size:30px;line-height:1.2;margin-bottom:6px;overflow-wrap:break-word}
+.stat span{font-size:15px;line-height:1.55;display:block}
+.figtable{width:100%;border-collapse:collapse;margin:18px 0 26px;font-size:16px}
+.figtable th,.figtable td{text-align:left;padding:11px 10px;border-bottom:1px solid rgba(255,255,255,.18);vertical-align:top;overflow-wrap:break-word}
+.figtable th{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.figtable td a,.stat a,main.wrap p a,main.wrap li a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.src{font-size:14px;opacity:.85}
+.buybox{border:1px solid rgba(255,255,255,.3);padding:22px 24px;margin:36px 0}
+.buybox a{color:inherit}
+.buybox .price{font-size:30px;font-weight:700;display:block;margin:6px 0}
+.note{background:rgba(255,255,255,.06);border-left:3px solid rgba(255,255,255,.4);padding:16px 20px;margin:26px 0}
+.note p{font-size:15px}
+footer{padding:32px 20px;text-align:center;font-size:14px}
+footer a{color:inherit}
+@media(max-width:520px){main.wrap{padding-top:96px}nav{padding:16px 18px!important}.figtable{font-size:14px}.figtable th,.figtable td{padding:9px 6px}}
+
+/* Phase 1 assembly 2026-10-31 */
+@media (max-width:900px){h1{font-size:clamp(44px,11vw,72px)!important}}
+@media (max-width:900px){.kicker{letter-spacing:.18em!important}}
+@media (max-width:900px){body{overflow-x:hidden}}
+
+/* Phase 1 assembly 2026-10-31 — nav solid correction */
+@media (max-width:900px){.nav{background:rgb(12,14,18)!important;backdrop-filter:none!important}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "commercialrentdata.com market data",
+  "description": "Public figures on office rents by major U.S. market, vacancy rates, and rent trends.",
+  "url": "https://commercialrentdata.com/market-data",
+  "temporalCoverage": "2025",
+  "creator": {
+    "@type": "Organization",
+    "name": "Prime Domain Capital"
+  },
+  "sourceOrganization": [
+    {
+      "@type": "Organization",
+      "url": "https://www.cbre.com/insights/reports/2026-tech-gateway-office-markets"
+    },
+    {
+      "@type": "Organization",
+      "url": "https://mktgdocs.cbre.com/2299/ee896eda-ef3e-47f5-a7c6-a4deaafaa1b5-145713222/NY_Manhattan_Q4_2025_FINAL.pdf"
+    },
+    {
+      "@type": "Organization",
+      "url": "https://www.commercialsearch.com/news/office-report-as-vacancy-eases-coworking-bridges-the-gaps/"
+    }
+  ],
+  "dateModified": "2026-10-31",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+<style>
+/* Mobile rendering fix 2026-10-31: domain H1 lines, stacked nav, header clearance */
+@media (max-width:900px){
+main h1{overflow-wrap:normal!important;word-break:normal!important}
+nav:not(.toc){flex-direction:column!important;align-items:flex-start!important;gap:4px!important;padding-top:16px!important;padding-bottom:16px!important;padding-left:20px!important;padding-right:20px!important}
+.topbar{flex-direction:column!important;align-items:flex-start!important;gap:4px!important;padding-top:16px!important;padding-bottom:16px!important;padding-left:20px!important;padding-right:20px!important}
+main h1{font-size:clamp(30px,8.5vw,58px)!important;line-height:1.15!important}
+}
+</style>
+</head>
+<body>
+<nav><div class="brand">Commercial<em>Rent</em>Data.com</div><a class="cta" href="https://www.afternic.com/domain/commercialrentdata.com">Buy Now</a></nav>
+<main class="wrap">
+<span class="stamp">Last updated: October 31, 2026</span>
+<p class="src" style="margin-top:14px">Market data · Office rents, vacancy rates, and rent trends in major U.S. markets</p>
+<h1>Office rents, market by market, without the spin</h1>
+
+<p class="lede">Office headlines spent years announcing the death of the workplace, then spent 2025 quietly revising that story in a handful of cities. The national vacancy rate finally ticked down, Manhattan leased more space than it had in years, and San Francisco — still the emptiest major market — posted its largest annual vacancy decline since 2011. The recovery is real in places and absent in others, and the rent figures below keep those two facts separate.</p>
+<h2>Headline figures</h2>
+<div class="statgrid">
+<div class="stat"><b>18.4%</b><span>National office vacancy rate in December 2025, down 140 basis points year over year. <a class="src" href="https://www.commercialsearch.com/news/office-report-as-vacancy-eases-coworking-bridges-the-gaps/">Source: CommercialSearch office report</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: ▼ Down 140 basis points year over year (December 2024: 19.8%, implied by the 140-point fall)</span></div>
+<div class="stat"><b>$32.86/sq ft</b><span>National average full-service equivalent listing rate in December 2025, down 0.8% year over year. <a class="src" href="https://www.commercialsearch.com/news/office-report-as-vacancy-eases-coworking-bridges-the-gaps/">Source: CommercialSearch office report</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: ▼ Down 0.8% year over year</span></div>
+<div class="stat"><b>12.7%</b><span>Manhattan office vacancy rate in December 2025, with an average asking rent of $77.89 per square foot. <a class="src" href="https://mktgdocs.cbre.com/2299/ee896eda-ef3e-47f5-a7c6-a4deaafaa1b5-145713222/NY_Manhattan_Q4_2025_FINAL.pdf">Source: CBRE Research, Manhattan Q4 2025</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: Baseline (October 2026) — trend tracking starts with the next refresh</span></div>
+<div class="stat"><b>32.8%</b><span>San Francisco office vacancy rate in Q4 2025 — the highest among tech gateway markets — even after falling about 3 percentage points since 2023. <a class="src" href="https://www.cbre.com/insights/reports/2026-tech-gateway-office-markets">Source: CBRE Research, Tech Gateway Office Markets</a></span><span class="trend" style="font-size:14px;opacity:.85;display:block;margin-top:8px">Trend: ▼ Down about 3 percentage points since 2023 (2023: about 35.8%, implied by the stated fall)</span></div>
+</div>
+<p>Trend column: each figure is compared with its prior period from the same source, with the prior figure shown. Where no prior-period figure from the same source was available, the figure is labeled Baseline (October 2026) — trend tracking starts with the next refresh.</p><table class="figtable"><tr><th>Market / measure</th><th>Value</th><th>Source</th><th>Trend vs prior period</th></tr>
+<tr><td>Manhattan full-year 2025 leasing activity</td><td>32.29M sq ft; absorption 13.60M sq ft</td><td><a href="https://mktgdocs.cbre.com/2299/ee896eda-ef3e-47f5-a7c6-a4deaafaa1b5-145713222/NY_Manhattan_Q4_2025_FINAL.pdf">CBRE Research, Manhattan Q4 2025</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>Manhattan average asking rent (alternate series)</td><td>$68.15/sq ft</td><td><a href="https://www.commercialsearch.com/news/office-report-as-vacancy-eases-coworking-bridges-the-gaps/">CommercialSearch, December 2025</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>San Francisco average asking rent</td><td>$63.15/sq ft</td><td><a href="https://www.commercialsearch.com/news/office-report-as-vacancy-eases-coworking-bridges-the-gaps/">CommercialSearch, December 2025</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>Lowest average rent among major markets</td><td>Detroit, $21.46/sq ft</td><td><a href="https://www.commercialsearch.com/news/office-report-as-vacancy-eases-coworking-bridges-the-gaps/">CommercialSearch, December 2025</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>Highest vacancy, December 2025</td><td>Austin 27.3%; Seattle 27.2%</td><td><a href="https://www.commercialsearch.com/news/office-report-as-vacancy-eases-coworking-bridges-the-gaps/">CommercialSearch, December 2025</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>Lowest vacancy nationwide, December 2025</td><td>Manhattan, 13.6% (alternate series)</td><td><a href="https://www.commercialsearch.com/news/office-report-as-vacancy-eases-coworking-bridges-the-gaps/">CommercialSearch, December 2025</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>Markets with falling vacancy, Q3 2025</td><td>29 of 58 tracked markets fell; 23 rose, 6 unchanged</td><td><a href="https://mktgdocs.cbre.com/2299/5db1a8d5-8fbb-461a-ae87-276ab13137e0-2048653351/Q3-2025_U.S._Office_Figures.pdf">CBRE Research, U.S. Office Q3 2025</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>San Francisco 2025 leasing total</td><td>10.2M sq ft, highest since 2019</td><td><a href="https://www.irisrents.com/blog/san-francisco-office-market-rebound">Iris Rents, citing preliminary CBRE data</a></td><td>Baseline (October 2026) — trend tracking starts with the next refresh</td></tr>
+<tr><td>U.S. office vacancy rate, Q3 2026</td><td>18.2% (down 60 bps year over year, 10 bps quarter over quarter; fifth straight quarterly decline)</td><td><a href="https://www.cbre.com/insights/figures/q3-2026-us-office-market-report">CBRE Research, Q3 2026 U.S. Office Market Report</a></td><td>▼ Down 60 bps year over year</td></tr>
+<tr><td>U.S. average asking rent, Q3 2026</td><td>$37.95/sq ft (up 3.1% year over year, fastest since 2016)</td><td><a href="https://www.cbre.com/insights/figures/q3-2026-us-office-market-report">CBRE Research, Q3 2026 U.S. Office Market Report</a></td><td>▲ Up 3.1% year over year</td></tr>
+<tr><td>U.S. office leasing activity, Q3 2026</td><td>63.8M sq ft (up 4% year over year; highest since Q4 2024)</td><td><a href="https://www.cbre.com/insights/figures/q3-2026-us-office-market-report">CBRE Research, Q3 2026 U.S. Office Market Report</a></td><td>▲ Up 4% year over year</td></tr>
+<tr><td>U.S. office net absorption, Q3 2026</td><td>4.9M sq ft (10th straight positive quarter)</td><td><a href="https://www.cbre.com/insights/figures/q3-2026-us-office-market-report">CBRE Research, Q3 2026 U.S. Office Market Report</a></td><td>▲ Positive (10th straight quarter)</td></tr>
+</table>
+<p>Two Manhattan numbers deserve a footnote, not a correction: CBRE's $77.89 and CommercialSearch's $68.15 are different series — CBRE's average asking rent for its Manhattan market definition against a full-service equivalent listing rate — so they should not be averaged or treated as a discrepancy. The same applies to vacancy: 12.7% (CBRE, December 2025) and 13.6% (CommercialSearch, December 2025) differ by definition and sample, not by error. What both series agree on is direction: Manhattan tightened, San Francisco improved from an extreme, and the national market stabilized rather than recovered.</p>
+<div class="note"><h3>Methodology</h3><p>Included: CBRE Research market reports (Manhattan Q4 2025, U.S. Office Q3 2025, Tech Gateway) and CommercialSearch's December 2025 national report, with series differences labeled. Excluded: JLL and Cushman &amp; Wakefield figures (not verified this session), achieved/taking rents except where CBRE's taking-rent index is noted in the source, and submarket rents beyond the Manhattan total. Asking rents are landlord asks, not signed rents.</p><p><strong>Disclaimer:</strong> Aggregated public estimates for information only, not investment or professional advice. Rents and vacancy vary by submarket, building class, and lease structure.</p></div>
+
+<div class="buybox">
+<span>This domain is for sale</span>
+<span class="price">Buy Now — $18,888</span>
+<p>Secure transfer via <a href="https://www.afternic.com/domain/commercialrentdata.com">Afternic</a> &middot; Inquiries: <a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p>
+</div>
+<h2>Changelog</h2>
+<ul>
+<li>October 2026: Initial edition — vacancy, asking rents, leasing and absorption, and market breadth established; trend indicators added to every figure (prior-period figures shown where the same source publishes them; all other figures labeled Baseline (October 2026)).</li>
+<li><strong>October 31, 2026:</strong> CBRE Q3 2026 added (vacancy 18.2%, asking rent $37.95/sq ft, leasing 63.8M sq ft, absorption 4.9M sq ft). Yardi September 2026 row held pending series-identity confirmation.</li>
+</ul>
+</main>
+<footer><p>Offered by <strong>Prime Domain Capital</strong> &middot; Private holder of category-defining domains</p><p><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p></footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1407571ec8bc45c3a082c91096558135"}'></script>
+<p class="back-home" style="display:block;text-align:center;padding:28px 16px;font-size:15px"><a href="https://commercialrentdata.com/" style="color:inherit">&larr; Back to commercialrentdata.com</a></p>
+</body>
+</html>

@@ -2,16 +2,18 @@
 
 All photography and video are verified free-to-use stock from Pexels (Pexels License: free for commercial use, no attribution required — https://www.pexels.com/license/). Every file below was downloaded locally, confirmed as image/video bytes (not 404/403), and visually inspected by a human-in-the-loop (frame extraction + image view) before inclusion.
 
-## Photos (5) — local: `images/`
+## Photos (6) — local: `images/`
 
 - `manhattan-midtown-aerial.jpg` — Pexels photo 31661829 — https://www.pexels.com/photo/31661829/ — Aerial view of Midtown Manhattan commercial towers (used in data-moat section).
 - `manhattan-towers-aerial.jpg` — Pexels photo 6431295 — https://www.pexels.com/photo/6431295/ — Aerial view of Manhattan towers and streets, daytime (used in insights card for article 2).
 - `glass-tower-blue.jpg` — Pexels photo 17131943 — https://www.pexels.com/photo/17131943/ — Low-angle view of a blue glass commercial tower (used in the final Buy Now section + article 3 hero).
-- `twin-glass-towers.jpg` — Pexels photo 248877 — https://www.pexels.com/photo/248877/ — Twin glass office towers against the sky (used in "The Asset" section).
+- `twin-glass-towers.jpg` — Pexels photo 248877 — https://www.pexels.com/photo/248877/ — Twin glass office towers against the sky (used in insights card for article 4 + article 4 hero).
+- `glass-tower-low-angle.jpg` — Pexels photo 18207068, Daniel Adesina — https://www.pexels.com/photo/18207068/ — Low-angle view of a modern glass tower against the sky (used in "The Asset" section; added Nov 6, 2026 to replace the second on-page use of twin-glass-towers.jpg — no photo now appears twice on index.html).
 - `office-interior.jpg` — Pexels photo 8297846 — https://www.pexels.com/photo/8297846/ — Modern office interior with city-view windows (used in insights card for article 1 + article 1 hero).
 
 Also evaluated and REJECTED after viewing (wrong subject or off-topic):
-- Pexels photos 18207068 and 28809197 (more low-angle glass buildings — redundant with the chosen set).
+- Pexels photo 28809197 (more low-angle glass buildings — redundant with the chosen set).
+- Note Nov 6, 2026: Pexels photo 18207068 (listed above as rejected) was later adopted as `glass-tower-low-angle.jpg` for "The Asset" section, replacing the duplicate on-page use of twin-glass-towers.jpg; it is no longer a rejected candidate.
 - Pexels photo 5956579 (Singapore skyline at night with prominent corporate signage — not U.S.-market-appropriate).
 
 ## Video (hero background) — local: `video/hero.mp4`
@@ -30,3 +32,9 @@ This video (Pexels 3856665) is also the hero on the sibling sale site privatedeb
 ## Design notes
 - Fonts: Fraunces (display serif) + Inter (body) via Google Fonts.
 - Palette: deep ink/charcoal (#0c0e12) with brass/copper accents (#c9a15a) — original theme; no canvas particle effects; no audio.
+
+## Photography replacement — Oct 20, 2026
+Swapped under the portfolio-wide image audit. Every pick personally verified by Q before swap; Pexels License (free for commercial use). Full provenance: ~/workspace/site-deploy/image-replace/ (batch/round manifests + verification-log.md). Originals backed up in pages-backup-20261020-images/.
+- images/manhattan-midtown-aerial.jpg — Pexels (ID in image-replace manifests)
+- images/manhattan-towers-aerial.jpg — Pexels (ID in image-replace manifests)
+- images/office-interior.jpg — Pexels 10621902, Melike B

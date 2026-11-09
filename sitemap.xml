@@ -2,20 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://commercialrentdata.com/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://commercialrentdata.com/market-data</loc>
+    <lastmod>2026-10-31</lastmod>
   </url>
   <url>
     <loc>https://commercialrentdata.com/insights/article1</loc>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://commercialrentdata.com/insights/article2</loc>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://commercialrentdata.com/insights/article3</loc>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://commercialrentdata.com/insights/article4</loc>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
-    <loc>https://commercialrentdata.com/market-data</loc><lastmod>2026-11-01</lastmod>
+    <loc>https://commercialrentdata.com/insights/article5</loc>
+    <lastmod>2026-11-09</lastmod>
   </url>
 </urlset>
